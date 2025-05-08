@@ -82,7 +82,7 @@ const HeroSection = () => {
           duration={800}
           className="absolute left-1/2 transform -translate-x-1/2 cursor-pointer"
           style={{ 
-            bottom: "5%", // Moved down further from the bottom
+            bottom: "3%", // Moved down further to the bottom
             opacity: isVisible ? 1 : 0,
             transition: "opacity 0.7s ease 0.6s"
           }}

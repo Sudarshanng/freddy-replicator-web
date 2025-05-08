@@ -4,13 +4,21 @@ import { Button } from "@/components/ui/button";
 const HeroSection = () => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+      {/* Video Background */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-          alt="Hero Background" 
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
           className="w-full h-full object-cover"
-        />
+        >
+          <source 
+            src="https://cdn.gpteng.co/video/fashion-video-bg.mp4" 
+            type="video/mp4" 
+          />
+          Your browser does not support the video tag.
+        </video>
         <div className="absolute inset-0 bg-black/30"></div>
       </div>
       

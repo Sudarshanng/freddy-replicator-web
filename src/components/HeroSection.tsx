@@ -1,16 +1,15 @@
 
-import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import { ChevronDown } from "lucide-react";
+import { Link } from "react-scroll";
 
 const HeroSection = () => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // This will help us debug if the video is loading
     console.log("Video loading status:", isVideoLoaded);
     
-    // Add animation delay to match fredmarcus.com style
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 500);
@@ -19,7 +18,7 @@ const HeroSection = () => {
   }, [isVideoLoaded]);
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video 
@@ -36,50 +35,54 @@ const HeroSection = () => {
           />
           Your browser does not support the video tag.
         </video>
-        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
       </div>
       
       {/* Content */}
       <div 
-        className={`relative z-10 text-center px-4 max-w-3xl mx-auto transition-opacity duration-1000 ease-in-out ${
+        className={`relative z-10 text-center px-4 max-w-4xl mx-auto transition-opacity duration-1000 ease-in-out ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}
       >
-        <h1 
-          className="text-4xl md:text-6xl font-light text-white mb-6 transform transition-transform duration-700 delay-300"
-          style={{ 
-            transform: isVisible ? "translateY(0)" : "translateY(20px)",
-            opacity: isVisible ? 1 : 0,
-            transition: "transform 0.7s ease, opacity 0.7s ease"
-          }}
-        >
-          TIMELESS ELEGANCE
-        </h1>
+        <div className="mb-6">
+          <h1 
+            className="text-5xl md:text-7xl lg:text-8xl font-light text-white tracking-wide"
+            style={{ 
+              transform: isVisible ? "translateY(0)" : "translateY(20px)",
+              opacity: isVisible ? 1 : 0,
+              transition: "transform 0.7s ease, opacity 0.7s ease",
+              fontFamily: "'Playfair Display', serif"
+            }}
+          >
+            <div>FRED</div>
+            <div className="mt-2">MARCUS</div>
+            <div className="text-base mt-1 tracking-widest">EST. 1941</div>
+          </h1>
+        </div>
+        
         <p 
-          className="text-lg md:text-xl text-white/90 mb-10 max-w-xl mx-auto"
+          className="text-lg md:text-xl text-white/90 mb-20 max-w-xl mx-auto"
           style={{ 
             transform: isVisible ? "translateY(0)" : "translateY(20px)",
             opacity: isVisible ? 1 : 0,
             transition: "transform 0.7s ease 0.4s, opacity 0.7s ease 0.4s"
           }}
         >
-          Discover our collection of premium clothing designed for the modern individual
+          Over 80 years of timeless<br />visual storytelling.
         </p>
-        <div 
-          className="flex justify-center gap-4"
+
+        <Link
+          to="about"
+          smooth={true}
+          duration={800}
+          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer"
           style={{ 
-            transform: isVisible ? "translateY(0)" : "translateY(20px)",
             opacity: isVisible ? 1 : 0,
-            transition: "transform 0.7s ease 0.6s, opacity 0.7s ease 0.6s"
+            transition: "opacity 0.7s ease 0.6s"
           }}
         >
-          <Button className="bg-white text-black hover:bg-white/90 rounded-none px-8 py-6 transition-all duration-300 hover:transform hover:scale-105">
-            SHOP NOW
-          </Button>
-          <Button variant="outline" className="border-white text-white hover:bg-white/20 rounded-none px-8 py-6 transition-all duration-300 hover:transform hover:scale-105">
-            LEARN MORE
-          </Button>
-        </div>
+          <ChevronDown className="text-white animate-bounce" size={36} />
+        </Link>
       </div>
     </section>
   );

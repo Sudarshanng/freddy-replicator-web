@@ -23,7 +23,6 @@ const Navbar = () => {
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-sm' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        {/* Logo could be added here */}
         <div className="flex-1"></div>
         
         <Sheet>
@@ -32,83 +31,86 @@ const Navbar = () => {
               <Menu size={28} className={scrolled ? "text-black" : "text-white"} />
             </button>
           </SheetTrigger>
-          <SheetContent className="w-full p-0 border-none bg-white overflow-y-auto" side="right">
-            <div className="h-full flex flex-col overflow-auto">
-              <div className="px-6 py-6 flex justify-end">
-                <SheetClose className="p-2 rounded-full hover:bg-black/5">
+          <SheetContent className="w-full overflow-y-auto bg-white p-0" side="right">
+            <div className="h-full flex flex-col">
+              {/* Close button */}
+              <div className="absolute top-6 right-6">
+                <SheetClose className="focus:outline-none hover:bg-black/5 p-2 rounded-full transition-colors">
                   <X size={24} />
                 </SheetClose>
               </div>
 
-              <div className="flex-1 px-10 py-6">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-12">
+              {/* Menu content */}
+              <div className="py-20 px-12 md:px-20 h-full">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 max-w-7xl mx-auto">
                   {/* Column 1: Weddings, Videography, Commercial */}
-                  <div className="space-y-10">
-                    <div className="space-y-5 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-                      <h2 className="text-2xl font-light playfair border-b pb-2">Weddings</h2>
-                      <div className="flex flex-col space-y-3 pl-1">
-                        <SheetClose asChild><a href="#" className="hover:underline transform hover:translate-x-1 transition-transform">All Weddings</a></SheetClose>
-                        <SheetClose asChild><a href="#" className="hover:underline transform hover:translate-x-1 transition-transform">New York City Weddings</a></SheetClose>
-                        <SheetClose asChild><a href="#" className="hover:underline transform hover:translate-x-1 transition-transform">Hamptons Weddings</a></SheetClose>
-                        <SheetClose asChild><a href="#" className="hover:underline transform hover:translate-x-1 transition-transform">Destination Weddings</a></SheetClose>
+                  <div className="space-y-12">
+                    <div className="space-y-6">
+                      <h2 className="text-3xl font-normal playfair">Weddings</h2>
+                      <div className="flex flex-col space-y-3">
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">All Weddings</a></SheetClose>
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">New York City Weddings</a></SheetClose>
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">Hamptons Weddings</a></SheetClose>
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">Destination Weddings</a></SheetClose>
                       </div>
                     </div>
                     
-                    <div className="space-y-5 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-                      <h2 className="text-2xl font-light playfair border-b pb-2">Videography</h2>
-                      <div className="flex flex-col space-y-3 pl-1">
-                        <SheetClose asChild><a href="#" className="hover:underline transform hover:translate-x-1 transition-transform">All Videography</a></SheetClose>
-                        <SheetClose asChild><a href="#" className="hover:underline transform hover:translate-x-1 transition-transform">Wedding Videography</a></SheetClose>
-                        <SheetClose asChild><a href="#" className="hover:underline transform hover:translate-x-1 transition-transform">Mitzvah Videography</a></SheetClose>
+                    <div className="space-y-6">
+                      <h2 className="text-3xl font-normal playfair">Videography</h2>
+                      <div className="flex flex-col space-y-3">
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">All Videography</a></SheetClose>
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">Wedding Videography</a></SheetClose>
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">Mitzvah Videography</a></SheetClose>
                       </div>
                     </div>
                     
-                    <div className="space-y-5 animate-fade-in" style={{ animationDelay: '0.5s' }}>
-                      <h2 className="text-2xl font-light playfair border-b pb-2">Commercial</h2>
-                      <div className="flex flex-col space-y-3 pl-1">
-                        <SheetClose asChild><a href="#" className="hover:underline transform hover:translate-x-1 transition-transform">All Commercial</a></SheetClose>
-                        <SheetClose asChild><a href="#" className="hover:underline transform hover:translate-x-1 transition-transform">Corporate Events</a></SheetClose>
-                        <SheetClose asChild><a href="#" className="hover:underline transform hover:translate-x-1 transition-transform">Headshots</a></SheetClose>
+                    <div className="space-y-6">
+                      <h2 className="text-3xl font-normal playfair">Commercial</h2>
+                      <div className="flex flex-col space-y-3">
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">All Commercial</a></SheetClose>
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">Corporate Events</a></SheetClose>
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">Headshots</a></SheetClose>
                       </div>
                     </div>
                   </div>
                   
                   {/* Column 2: Engagements, Family Events */}
-                  <div className="space-y-10">
-                    <div className="space-y-5 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                      <h2 className="text-2xl font-light playfair border-b pb-2">Engagements</h2>
-                      <div className="flex flex-col space-y-3 pl-1">
-                        <SheetClose asChild><a href="#" className="hover:underline transform hover:translate-x-1 transition-transform">All Engagements</a></SheetClose>
-                        <SheetClose asChild><a href="#" className="hover:underline transform hover:translate-x-1 transition-transform">New York City Engagements</a></SheetClose>
-                        <SheetClose asChild><a href="#" className="hover:underline transform hover:translate-x-1 transition-transform">Hamptons Engagements</a></SheetClose>
+                  <div className="space-y-12 mt-12 md:mt-0">
+                    <div className="space-y-6">
+                      <h2 className="text-3xl font-normal playfair">Engagements</h2>
+                      <div className="flex flex-col space-y-3">
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">All Engagements</a></SheetClose>
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">New York City Engagements</a></SheetClose>
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">Hamptons Engagements</a></SheetClose>
                       </div>
                     </div>
                     
-                    <div className="space-y-5 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-                      <h2 className="text-2xl font-light playfair border-b pb-2">Family Events</h2>
-                      <div className="flex flex-col space-y-3 pl-1">
-                        <SheetClose asChild><a href="#" className="hover:underline transform hover:translate-x-1 transition-transform">All Family Events</a></SheetClose>
-                        <SheetClose asChild><a href="#" className="hover:underline transform hover:translate-x-1 transition-transform">Family Portraits</a></SheetClose>
-                        <SheetClose asChild><a href="#" className="hover:underline transform hover:translate-x-1 transition-transform">Bar/Bat Mitzvahs</a></SheetClose>
+                    <div className="space-y-6">
+                      <h2 className="text-3xl font-normal playfair">Family Events</h2>
+                      <div className="flex flex-col space-y-3">
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">All Family Events</a></SheetClose>
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">Family Portraits</a></SheetClose>
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">Bar/Bat Mitzvahs</a></SheetClose>
                       </div>
                     </div>
                   </div>
                   
-                  {/* Column 3: About Us, etc. */}
-                  <div className="space-y-6 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-                    <SheetClose asChild><a href="#" className="block text-2xl font-light playfair hover:underline transform hover:translate-x-1 transition-transform">About Us</a></SheetClose>
-                    <SheetClose asChild><a href="#" className="block text-2xl font-light playfair hover:underline transform hover:translate-x-1 transition-transform">Testimonials</a></SheetClose>
-                    <SheetClose asChild><a href="#" className="block text-2xl font-light playfair hover:underline transform hover:translate-x-1 transition-transform">Contact</a></SheetClose>
-                    <SheetClose asChild><a href="#" className="block text-2xl font-light playfair hover:underline transform hover:translate-x-1 transition-transform">Inquiries</a></SheetClose>
-                    <SheetClose asChild><a href="#" className="block text-2xl font-light playfair hover:underline transform hover:translate-x-1 transition-transform">NYT Feature</a></SheetClose>
-                    <SheetClose asChild><a href="#" className="block text-2xl font-light playfair hover:underline transform hover:translate-x-1 transition-transform">Client Login</a></SheetClose>
+                  {/* Column 3: About, etc */}
+                  <div className="space-y-6 mt-12 md:mt-0">
+                    <SheetClose asChild><a href="#" className="block text-3xl font-normal playfair hover:opacity-60 transition-opacity">About Us</a></SheetClose>
+                    <SheetClose asChild><a href="#" className="block text-3xl font-normal playfair hover:opacity-60 transition-opacity">Testimonials</a></SheetClose>
+                    <SheetClose asChild><a href="#" className="block text-3xl font-normal playfair hover:opacity-60 transition-opacity">Contact</a></SheetClose>
+                    <SheetClose asChild><a href="#" className="block text-3xl font-normal playfair hover:opacity-60 transition-opacity">Inquiries</a></SheetClose>
+                    <SheetClose asChild><a href="#" className="block text-3xl font-normal playfair hover:opacity-60 transition-opacity">NYT Feature</a></SheetClose>
+                    <SheetClose asChild><a href="#" className="block text-3xl font-normal playfair hover:opacity-60 transition-opacity">Client Login</a></SheetClose>
                   </div>
                 </div>
               </div>
               
-              <div className="mt-auto pt-12 pb-8 text-center border-t">
-                <p className="text-lg font-light animate-fade-in" style={{ animationDelay: '0.6s' }}>
-                  Keep up with Fred Marcus: <a href="#" className="underline hover:text-gray-600 transition-colors">Behind the Lens</a>
+              {/* Footer section */}
+              <div className="mt-auto border-t py-10">
+                <p className="text-center text-lg">
+                  Keep up with Fred Marcus: <a href="#" className="underline hover:opacity-70 transition-opacity">Behind the Lens</a>
                 </p>
               </div>
             </div>

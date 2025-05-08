@@ -1,7 +1,15 @@
 
 import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
 
 const HeroSection = () => {
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
+  useEffect(() => {
+    // This will help us debug if the video is loading
+    console.log("Video loading status:", isVideoLoaded);
+  }, [isVideoLoaded]);
+
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Video Background */}
@@ -12,6 +20,7 @@ const HeroSection = () => {
           loop 
           playsInline
           className="w-full h-full object-cover"
+          onLoadedData={() => setIsVideoLoaded(true)}
         >
           <source 
             src="https://cdn.gpteng.co/video/fashion-video-bg.mp4" 

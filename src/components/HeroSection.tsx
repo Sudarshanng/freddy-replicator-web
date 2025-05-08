@@ -8,8 +8,6 @@ const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    console.log("Video loading status:", isVideoLoaded);
-    
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 500);
@@ -19,7 +17,7 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Video Background */}
+      {/* Video/Image Background */}
       <div className="absolute inset-0 z-0">
         <video 
           autoPlay 
@@ -35,6 +33,13 @@ const HeroSection = () => {
           />
           Your browser does not support the video tag.
         </video>
+        {!isVideoLoaded && (
+          <img 
+            src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1920&q=80" 
+            alt="Photography backdrop" 
+            className="w-full h-full object-cover"
+          />
+        )}
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
       

@@ -31,84 +31,84 @@ const Navbar = () => {
               <Menu size={28} className={scrolled ? "text-black" : "text-white"} />
             </button>
           </SheetTrigger>
-          <SheetContent className="w-full overflow-y-auto bg-white p-0" side="right">
+          <SheetContent className="w-full p-0 overflow-y-auto bg-white" side="right">
             <div className="h-full flex flex-col">
               {/* Close button */}
-              <div className="absolute top-6 right-6">
+              <div className="absolute top-8 right-8 z-10">
                 <SheetClose className="focus:outline-none hover:bg-black/5 p-2 rounded-full transition-colors">
                   <X size={24} />
                 </SheetClose>
               </div>
 
               {/* Menu content */}
-              <div className="py-20 px-12 md:px-20 h-full">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 max-w-7xl mx-auto">
+              <div className="flex-1 py-24 px-12 md:px-20 h-full overflow-y-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 lg:gap-x-16 gap-y-16 md:gap-y-0 max-w-7xl mx-auto">
                   {/* Column 1: Weddings, Videography, Commercial */}
                   <div className="space-y-12">
-                    <div className="space-y-6">
-                      <h2 className="text-3xl font-normal playfair">Weddings</h2>
-                      <div className="flex flex-col space-y-3">
-                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">All Weddings</a></SheetClose>
-                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">New York City Weddings</a></SheetClose>
-                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">Hamptons Weddings</a></SheetClose>
-                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">Destination Weddings</a></SheetClose>
+                    <div className="menu-category">
+                      <h2 className="text-3xl font-normal playfair mb-6">Weddings</h2>
+                      <div className="flex flex-col space-y-4">
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity text-lg">All Weddings</a></SheetClose>
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity text-lg">New York City Weddings</a></SheetClose>
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity text-lg">Hamptons Weddings</a></SheetClose>
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity text-lg">Destination Weddings</a></SheetClose>
                       </div>
                     </div>
                     
-                    <div className="space-y-6">
-                      <h2 className="text-3xl font-normal playfair">Videography</h2>
-                      <div className="flex flex-col space-y-3">
-                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">All Videography</a></SheetClose>
-                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">Wedding Videography</a></SheetClose>
-                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">Mitzvah Videography</a></SheetClose>
+                    <div className="menu-category">
+                      <h2 className="text-3xl font-normal playfair mb-6">Videography</h2>
+                      <div className="flex flex-col space-y-4">
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity text-lg">All Videography</a></SheetClose>
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity text-lg">Wedding Videography</a></SheetClose>
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity text-lg">Mitzvah Videography</a></SheetClose>
                       </div>
                     </div>
                     
-                    <div className="space-y-6">
-                      <h2 className="text-3xl font-normal playfair">Commercial</h2>
-                      <div className="flex flex-col space-y-3">
-                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">All Commercial</a></SheetClose>
-                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">Corporate Events</a></SheetClose>
-                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">Headshots</a></SheetClose>
+                    <div className="menu-category">
+                      <h2 className="text-3xl font-normal playfair mb-6">Commercial</h2>
+                      <div className="flex flex-col space-y-4">
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity text-lg">All Commercial</a></SheetClose>
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity text-lg">Corporate Events</a></SheetClose>
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity text-lg">Headshots</a></SheetClose>
                       </div>
                     </div>
                   </div>
                   
                   {/* Column 2: Engagements, Family Events */}
-                  <div className="space-y-12 mt-12 md:mt-0">
-                    <div className="space-y-6">
-                      <h2 className="text-3xl font-normal playfair">Engagements</h2>
-                      <div className="flex flex-col space-y-3">
-                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">All Engagements</a></SheetClose>
-                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">New York City Engagements</a></SheetClose>
-                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">Hamptons Engagements</a></SheetClose>
+                  <div className="space-y-12">
+                    <div className="menu-category">
+                      <h2 className="text-3xl font-normal playfair mb-6">Engagements</h2>
+                      <div className="flex flex-col space-y-4">
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity text-lg">All Engagements</a></SheetClose>
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity text-lg">New York City Engagements</a></SheetClose>
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity text-lg">Hamptons Engagements</a></SheetClose>
                       </div>
                     </div>
                     
-                    <div className="space-y-6">
-                      <h2 className="text-3xl font-normal playfair">Family Events</h2>
-                      <div className="flex flex-col space-y-3">
-                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">All Family Events</a></SheetClose>
-                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">Family Portraits</a></SheetClose>
-                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity">Bar/Bat Mitzvahs</a></SheetClose>
+                    <div className="menu-category">
+                      <h2 className="text-3xl font-normal playfair mb-6">Family Events</h2>
+                      <div className="flex flex-col space-y-4">
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity text-lg">All Family Events</a></SheetClose>
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity text-lg">Family Portraits</a></SheetClose>
+                        <SheetClose asChild><a href="#" className="hover:opacity-60 transition-opacity text-lg">Bar/Bat Mitzvahs</a></SheetClose>
                       </div>
                     </div>
                   </div>
                   
                   {/* Column 3: About, etc */}
-                  <div className="space-y-6 mt-12 md:mt-0">
-                    <SheetClose asChild><a href="#" className="block text-3xl font-normal playfair hover:opacity-60 transition-opacity">About Us</a></SheetClose>
-                    <SheetClose asChild><a href="#" className="block text-3xl font-normal playfair hover:opacity-60 transition-opacity">Testimonials</a></SheetClose>
-                    <SheetClose asChild><a href="#" className="block text-3xl font-normal playfair hover:opacity-60 transition-opacity">Contact</a></SheetClose>
-                    <SheetClose asChild><a href="#" className="block text-3xl font-normal playfair hover:opacity-60 transition-opacity">Inquiries</a></SheetClose>
-                    <SheetClose asChild><a href="#" className="block text-3xl font-normal playfair hover:opacity-60 transition-opacity">NYT Feature</a></SheetClose>
-                    <SheetClose asChild><a href="#" className="block text-3xl font-normal playfair hover:opacity-60 transition-opacity">Client Login</a></SheetClose>
+                  <div className="space-y-5">
+                    <SheetClose asChild><a href="#" className="block text-3xl font-normal playfair hover:opacity-60 transition-opacity mb-4">About Us</a></SheetClose>
+                    <SheetClose asChild><a href="#" className="block text-3xl font-normal playfair hover:opacity-60 transition-opacity mb-4">Testimonials</a></SheetClose>
+                    <SheetClose asChild><a href="#" className="block text-3xl font-normal playfair hover:opacity-60 transition-opacity mb-4">Contact</a></SheetClose>
+                    <SheetClose asChild><a href="#" className="block text-3xl font-normal playfair hover:opacity-60 transition-opacity mb-4">Inquiries</a></SheetClose>
+                    <SheetClose asChild><a href="#" className="block text-3xl font-normal playfair hover:opacity-60 transition-opacity mb-4">NYT Feature</a></SheetClose>
+                    <SheetClose asChild><a href="#" className="block text-3xl font-normal playfair hover:opacity-60 transition-opacity mb-4">Client Login</a></SheetClose>
                   </div>
                 </div>
               </div>
               
               {/* Footer section */}
-              <div className="mt-auto border-t py-10">
+              <div className="border-t py-8">
                 <p className="text-center text-lg">
                   Keep up with Fred Marcus: <a href="#" className="underline hover:opacity-70 transition-opacity">Behind the Lens</a>
                 </p>

@@ -28,7 +28,7 @@ const HeroSection = () => {
           onLoadedData={() => setIsVideoLoaded(true)}
         >
           <source 
-            src="https://cdn.gpteng.co/video/fashion-video-bg.mp4" 
+            src="https://cdn.pixabay.com/video/2023/07/04/169951-842348732.mp4" 
             type="video/mp4" 
           />
           Your browser does not support the video tag.
@@ -82,7 +82,7 @@ const HeroSection = () => {
           duration={800}
           className="absolute left-1/2 transform -translate-x-1/2 cursor-pointer"
           style={{ 
-            bottom: "3%", // Moved down further to the bottom
+            bottom: "3%",
             opacity: isVisible ? 1 : 0,
             transition: "opacity 0.7s ease 0.6s"
           }}

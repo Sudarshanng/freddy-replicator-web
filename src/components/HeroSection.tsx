@@ -51,7 +51,7 @@ const HeroSection = () => {
       >
         <div className="mb-6">
           <h1 
-            className="text-5xl md:text-7xl lg:text-8xl font-light text-white tracking-wide"
+            className="text-4xl md:text-6xl lg:text-7xl font-light text-white tracking-wide"
             style={{ 
               transform: isVisible ? "translateY(0)" : "translateY(20px)",
               opacity: isVisible ? 1 : 0,
@@ -59,9 +59,9 @@ const HeroSection = () => {
               fontFamily: "'Playfair Display', serif"
             }}
           >
-            <div>FRED</div>
-            <div className="mt-2">MARCUS</div>
-            <div className="text-base mt-1 tracking-widest">EST. 1941</div>
+            <div>CORPORATE</div>
+            <div className="mt-2">PHOTOGRAPHER</div>
+            <div className="text-base mt-3 tracking-widest">EST. 1941</div>
           </h1>
         </div>
         
